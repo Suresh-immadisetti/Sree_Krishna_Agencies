@@ -25,7 +25,7 @@ const FloatingButtons: React.FC = () => {
     <>
       {/* WhatsApp Float Button */}
       <a 
-        href="https://wa.me/919876543210?text=Hello! I'm interested in your wholesale grocery products. Please share your price list."
+        href="https://wa.me/916301949370?text=Hello! I'm interested in your wholesale grocery products. Please share your price list."
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300 z-50 animate-pulse"
@@ -39,7 +39,7 @@ const FloatingButtons: React.FC = () => {
           <div className="bg-gradient-to-r from-orange-500 to-red-600 p-4 text-white">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="font-semibold">Ramesh Trading Support</h3>
+                <h3 className="font-semibold">Sree Krishna Agencies Support</h3>
                 <p className="text-xs opacity-90">We're here to help!</p>
               </div>
               <button 
@@ -53,7 +53,7 @@ const FloatingButtons: React.FC = () => {
           <div className="p-4 h-64 overflow-y-auto bg-gray-50">
             <div className="space-y-4">
               <div className="bg-white p-3 rounded-xl shadow-sm">
-                <p className="text-sm text-gray-800">Hello! Welcome to Ramesh Trading Company. How can I help you with your wholesale grocery requirements today?</p>
+                <p className="text-sm text-gray-800">Hello! Welcome to Sree Krishna Agencies. How can I help you with your wholesale grocery requirements today?</p>
               </div>
               <div className="bg-orange-500 text-white p-3 rounded-xl ml-8">
                 <p className="text-sm">I need wholesale prices for rice and spices</p>
@@ -62,7 +62,7 @@ const FloatingButtons: React.FC = () => {
                 <p className="text-sm text-gray-800">Great! We have premium basmati rice starting from ₹120/kg and authentic spices. What quantities are you looking for? I can share our detailed price list.</p>
               </div>
               <div className="bg-white p-3 rounded-xl shadow-sm">
-                <p className="text-sm text-gray-800">You can also call us at +91 98765 43210 or WhatsApp for immediate assistance!</p>
+                <p className="text-sm text-gray-800">You can also call us at +91 6301949370 or WhatsApp for immediate assistance!</p>
               </div>
             </div>
           </div>

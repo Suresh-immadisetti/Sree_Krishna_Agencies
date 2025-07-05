@@ -11,27 +11,27 @@ import {
 
 const About: React.FC = () => {
   const stats = [
-    { icon: Award, value: "26+", label: "Years Experience", description: "Serving since 1998" },
-    { icon: Users, value: "5000+", label: "Satisfied Clients", description: "Across Maharashtra" },
-    { icon: Truck, value: "10000+", label: "Products Delivered", description: "Monthly deliveries" },
+    { icon: Award, value: "1+", label: "Years Experience", description: "Serving since 2025" },
+    { icon: Users, value: "500+", label: "Satisfied Clients", description: "Across Telangana" },
+    { icon: Truck, value: "1000+", label: "Products Delivered", description: "Monthly deliveries" },
     { icon: Shield, value: "100%", label: "Quality Assured", description: "Premium products only" }
   ];
 
   const values = [
     {
       icon: Target,
-      title: "Quality First",
-      description: "We source only the finest products directly from trusted farmers and manufacturers, ensuring every item meets our strict quality standards."
+      title: "Quality Commitment",
+      description: "We meticulously source products directly from certified farmers and manufacturers, implementing rigorous quality checks at every stage."
     },
     {
       icon: Heart,
-      title: "Customer Satisfaction",
-      description: "Our customers are at the heart of everything we do. We build lasting relationships through exceptional service and competitive pricing."
+      title: "Customer-Centric Approach",
+      description: "Building partnerships through transparent pricing, reliable service, and personalized solutions tailored to each client's needs."
     },
     {
       icon: CheckCircle,
-      title: "Reliability",
-      description: "With over 26 years of experience, we've built a reputation for consistent quality, timely delivery, and dependable service."
+      title: "Operational Excellence",
+      description: "Modern infrastructure and efficient processes ensure consistent product availability and timely deliveries."
     }
   ];
 
@@ -44,12 +44,12 @@ const About: React.FC = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
               About 
               <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                Ramesh Trading Company
+                Sree Krishna Agencies
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Established in 1998, we have been Mumbai's trusted wholesale partner for premium quality groceries, 
-              food products, spices, grains, and commodities for over 26 years.
+              Founded in 2025, we are rapidly becoming Hyderabad's preferred wholesale partner for premium groceries, 
+              spices, and food commodities with a commitment to quality and service excellence.
             </p>
           </div>
 
@@ -75,8 +75,8 @@ const About: React.FC = () => {
             <div>
               <img 
                 src="https://images.pexels.com/photos/1340116/pexels-photo-1340116.jpeg" 
-                alt="About Ramesh Trading Company" 
-                className="rounded-3xl shadow-2xl"
+                alt="About Sree Krishna Agencies" 
+                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
               />
             </div>
             
@@ -84,24 +84,23 @@ const About: React.FC = () => {
               <h2 className="text-4xl font-bold text-gray-900">
                 Our 
                 <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  Story
+                  Journey
                 </span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Founded in 1998 by Mr. Ramesh Patel, Ramesh Trading Company began as a small grocery wholesale business 
-                in Mumbai's bustling Crawford Market. What started as a vision to provide quality food products at 
-                fair prices has grown into one of Maharashtra's most trusted wholesale suppliers.
+                Established in 2025, Sree Krishna Agencies was born from a vision to revolutionize wholesale grocery 
+                distribution in Hyderabad. Our founder recognized the need for a reliable partner that combines 
+                quality products with exceptional service in the wholesale market.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Over the past 26 years, we have built strong relationships with farmers, manufacturers, and suppliers 
-                across India, ensuring we can offer the finest quality products at competitive wholesale rates. Our 
-                commitment to excellence has earned us the trust of over 5,000 satisfied customers.
+                In our first year of operation, we've already made significant strides, building a network of 
+                trusted suppliers and a growing base of satisfied customers. Our modern procurement and distribution 
+                systems ensure we meet the evolving needs of retailers, restaurants, and institutional buyers.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we specialize in providing premium quality groceries, spices, grains, pulses, oils, and 
-                commodities to retailers, restaurants, hotels, and businesses across Mumbai and Maharashtra. Our 
-                modern warehouse facilities and efficient distribution network ensure fresh products reach our 
-                customers on time, every time.
+                Specializing in premium groceries, spices, pulses, and cooking essentials, we've implemented 
+                stringent quality control measures and inventory management systems that set us apart in the 
+                competitive Hyderabad market.
               </p>
             </div>
           </div>
@@ -114,10 +113,10 @@ const About: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our 
-              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Values</span>
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Principles</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The principles that guide everything we do and have made us a trusted name in the wholesale grocery industry.
+              The foundation of our business that drives our daily operations and customer relationships.
             </p>
           </div>
 
@@ -140,8 +139,8 @@ const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose 
-              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Us?</span>
+              Our 
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Advantages</span>
             </h2>
           </div>
 
@@ -152,8 +151,8 @@ const About: React.FC = () => {
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Premium Quality Products</h3>
-                  <p className="text-gray-600">We source directly from trusted farmers and manufacturers, ensuring only the finest quality products reach our customers.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Rigorous Quality Standards</h3>
+                  <p className="text-gray-600">Every product undergoes multiple quality checks before reaching our warehouse, ensuring only the best reaches your business.</p>
                 </div>
               </div>
 
@@ -162,8 +161,8 @@ const About: React.FC = () => {
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Competitive Wholesale Pricing</h3>
-                  <p className="text-gray-600">Our strong supplier relationships and efficient operations allow us to offer the best wholesale prices in the market.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Competitive Pricing Structure</h3>
+                  <p className="text-gray-600">Our lean operations and direct sourcing enable us to offer market-leading prices without compromising on quality.</p>
                 </div>
               </div>
 
@@ -172,8 +171,8 @@ const About: React.FC = () => {
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Reliable Supply Chain</h3>
-                  <p className="text-gray-600">With our modern warehouse facilities and efficient distribution network, we ensure consistent supply and timely delivery.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Reliable Distribution Network</h3>
+                  <p className="text-gray-600">Strategically located storage facilities and efficient logistics ensure on-time deliveries across Hyderabad.</p>
                 </div>
               </div>
 
@@ -182,8 +181,8 @@ const About: React.FC = () => {
                   <CheckCircle className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Customer Support</h3>
-                  <p className="text-gray-600">Our experienced team provides personalized service and expert advice to help you make the best purchasing decisions.</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Dedicated Account Management</h3>
+                  <p className="text-gray-600">Each client receives personalized service from our experienced team, with tailored solutions for your specific needs.</p>
                 </div>
               </div>
             </div>
@@ -192,11 +191,11 @@ const About: React.FC = () => {
               <img 
                 src="https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg" 
                 alt="Quality Assurance" 
-                className="rounded-3xl shadow-2xl"
+                className="rounded-3xl shadow-2xl w-full h-auto object-cover"
               />
               <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-orange-500 to-red-600 text-white p-6 rounded-2xl shadow-xl">
-                <div className="text-2xl font-bold">26+ Years</div>
-                <div className="text-sm opacity-90">of Excellence</div>
+                <div className="text-2xl font-bold">1+ Year</div>
+                <div className="text-sm opacity-90">of Trust Building</div>
               </div>
             </div>
           </div>

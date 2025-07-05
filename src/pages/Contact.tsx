@@ -33,10 +33,7 @@ const Contact: React.FC = () => {
               <h3 className="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
               <p className="text-gray-600 mb-4">Speak with our sales team</p>
               <a href="tel:+912224567890" className="text-orange-600 font-semibold hover:underline block">
-                +91 22 2456 7890
-              </a>
-              <a href="tel:+919876543210" className="text-orange-600 font-semibold hover:underline block">
-                +91 98765 43210
+                +916301949370
               </a>
             </div>
 
@@ -46,11 +43,11 @@ const Contact: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
               <p className="text-gray-600 mb-4">Send us your requirements</p>
-              <a href="mailto:info@rameshtradingcompany.in" className="text-orange-600 font-semibold hover:underline block">
-                info@rameshtradingcompany.in
+              <a href="mailto:info@sreekrishnaagencies.in" className="text-orange-600 font-semibold hover:underline block">
+                info@sreekrishnaagencies.in
               </a>
-              <a href="mailto:sales@rameshtradingcompany.in" className="text-orange-600 font-semibold hover:underline block">
-                sales@rameshtradingcompany.in
+              <a href="mailto:sales@sreekrishnaagencies.in" className="text-orange-600 font-semibold hover:underline block">
+                sales@sreekrishnaagencies.in
               </a>
             </div>
 
@@ -60,8 +57,8 @@ const Contact: React.FC = () => {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h3>
               <p className="text-gray-600 mb-4">Quick response guaranteed</p>
-              <a href="https://wa.me/919876543210" className="text-orange-600 font-semibold hover:underline">
-                +91 98765 43210
+              <a href="https://wa.me/+916301949370" className="text-orange-600 font-semibold hover:underline">
+                +916301949370
               </a>
             </div>
           </div>
@@ -154,7 +151,7 @@ const Contact: React.FC = () => {
                     Contact us for special wholesale pricing on bulk orders. We offer competitive rates for large quantities.
                   </p>
                   <a 
-                    href="tel:+919876543210"
+                    href="tel:+916301949370"
                     className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-lg hover:shadow-lg transition-all duration-200 text-sm font-semibold"
                   >
                     <Phone className="w-4 h-4" />
@@ -173,14 +170,14 @@ const Contact: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our 
-              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Locations</span>
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent"> Location</span>
             </h2>
             <p className="text-xl text-gray-600">
-              Visit our stores or warehouse for direct purchases and better deals.
+              Visit our store for direct purchases and better deals.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-1 gap-12">
             {/* Main Store */}
             <div className="bg-gray-50 rounded-2xl p-8">
               <div className="flex items-center space-x-3 mb-6">
@@ -188,67 +185,29 @@ const Contact: React.FC = () => {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Main Store</h3>
-                  <p className="text-orange-600 font-semibold">Crawford Market, Mumbai</p>
+                  <h3 className="text-2xl font-bold text-gray-900">Our Store</h3>
+                  <p className="text-orange-600 font-semibold">Hyderabad, Telangana</p>
                 </div>
               </div>
               
               <div className="mb-6">
                 <p className="text-gray-700 mb-2">
                   <strong>Address:</strong><br />
-                  Shop No. 15-16, Crawford Market,<br />
-                  Dr. D.N. Road, Fort,<br />
-                  Mumbai - 400001, Maharashtra
+                  3-5-135, Hyderguda Cross Rd,<br />
+                  Attapur, Gumma Konda Colony,<br />
+                  Hyderabad, Telangana 500048
                 </p>
                 <p className="text-gray-700">
-                  <strong>Phone:</strong> +91 22 2456 7890
+                  <strong>Phone:</strong> +91 6301949370
                 </p>
               </div>
 
               {/* Google Maps Embed for Main Store */}
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.864277428847!2d72.83102831490214!3d18.94715998718808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce5d94f6c5e5%3A0x4b2b4b2b4b2b4b2b!2sCrawford%20Market%2C%20Fort%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.262044447889!2d78.43158731487694!3d17.44890478804271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90d5e6d8d5a5%3A0x3e3a8b3b3b3b3b3b!2sHyderguda%20Cross%20Rd%2C%20Attapur%2C%20Gumma%20Konda%20Colony%2C%20Hyderabad%2C%20Telangana%20500048!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
                   width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
-            </div>
-
-            {/* Godown Location */}
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center">
-                  <Truck className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Godown Location</h3>
-                  <p className="text-orange-600 font-semibold">APMC Market, Vashi</p>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <p className="text-gray-700 mb-2">
-                  <strong>Address:</strong><br />
-                  Warehouse No. 8, APMC Market,<br />
-                  Sector 19, Vashi,<br />
-                  Navi Mumbai - 400703, Maharashtra
-                </p>
-                <p className="text-gray-700">
-                  <strong>Phone:</strong> +91 98765 43210
-                </p>
-              </div>
-
-              {/* Google Maps Embed for Godown */}
-              <div className="rounded-xl overflow-hidden shadow-lg">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2234567890123!2d73.01234567890123!3d19.01234567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c8f1234567890%3A0x1234567890123456!2sAPMC%20Market%2C%20Vashi%2C%20Navi%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1635000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="250"
+                  height="400"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"

@@ -1,18 +1,50 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { 
   ChevronRight,
   Users,
   Award,
   Truck,
   Shield,
-  Star
+  Star,
+  ArrowUp
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 const Home: React.FC = () => {
   const { dispatch } = useCart();
+  const location = useLocation();
+  const [showScrollButton, setShowScrollButton] = React.useState(false);
 
+  // Smooth scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [location.pathname]);
+
+  // Show scroll button when scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Data definitions
   const categories = [
     { name: "Rice & Grains", icon: "🌾", count: 25, description: "Premium Basmati, Non-Basmati Rice, Wheat, Barley" },
     { name: "Pulses & Lentils", icon: "🫘", count: 18, description: "Toor Dal, Moong Dal, Chana Dal, Urad Dal" },
@@ -63,14 +95,14 @@ const Home: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { icon: Users, value: "5000+", label: "Happy Customers" },
-    { icon: Award, value: "26+", label: "Years Experience" },
-    { icon: Truck, value: "10000+", label: "Products Delivered" },
+  const businessStats = [
+    { icon: Users, value: "500+", label: "Happy Customers" },
+    { icon: Award, value: "1+", label: "Years Experience" },
+    { icon: Truck, value: "1000+", label: "Products Delivered" },
     { icon: Shield, value: "100%", label: "Quality Assured" }
   ];
 
-  const addToCart = (product: any) => {
+  const handleAddToCart = (product: typeof featuredProducts[0]) => {
     dispatch({
       type: 'ADD_TO_CART',
       payload: {
@@ -81,13 +113,25 @@ const Home: React.FC = () => {
         category: product.category
       }
     });
+    scrollToTop(); // Scroll to top after adding to cart
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-16 relative">
+      {/* Scroll to top button */}
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-40 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 text-white rounded-full shadow-xl flex items-center justify-center hover:scale-110 transition-transform duration-300"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="w-6 h-6" />
+        </button>
+      )}
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center bg-gradient-to-br from-orange-50 via-white to-red-50 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/5 to-red-600/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/5 to-red-600/5" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -100,13 +144,14 @@ const Home: React.FC = () => {
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Your trusted wholesale partner for premium groceries, food products, spices, grains, and commodities. 
-                  Serving Mumbai and Maharashtra since 1998 with guaranteed quality and competitive prices.
+                  Serving Hyderabad and Telangana with guaranteed quality and competitive prices.
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/products"
+                  onClick={scrollToTop}
                   className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold text-lg flex items-center justify-center space-x-2"
                 >
                   <span>Shop by Categories</span>
@@ -114,6 +159,7 @@ const Home: React.FC = () => {
                 </Link>
                 <Link 
                   to="/contact"
+                  onClick={scrollToTop}
                   className="border-2 border-orange-500 text-orange-600 px-8 py-4 rounded-full hover:bg-orange-500 hover:text-white transition-all duration-300 font-semibold text-lg text-center"
                 >
                   Contact Us
@@ -121,7 +167,7 @@ const Home: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-8">
-                {stats.map((stat, index) => (
+                {businessStats.map((stat, index) => (
                   <div key={index} className="text-center">
                     <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mx-auto mb-2">
                       <stat.icon className="w-6 h-6 text-white" />
@@ -138,10 +184,11 @@ const Home: React.FC = () => {
                 <img 
                   src="https://images.pexels.com/photos/4552652/pexels-photo-4552652.jpeg" 
                   alt="Quality Grocery Products" 
-                  className="rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+                  className="rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500 w-full h-auto"
+                  loading="lazy"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl opacity-20"></div>
+              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-r from-orange-500 to-red-600 rounded-3xl opacity-20" />
             </div>
           </div>
         </div>
@@ -165,7 +212,8 @@ const Home: React.FC = () => {
               <Link 
                 key={index}
                 to="/products"
-                className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-orange-100 group cursor-pointer"
+                onClick={scrollToTop}
+                className="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-orange-100 group"
               >
                 <div className="text-center">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -199,12 +247,16 @@ const Home: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts.map((product) => (
-              <div key={product.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
+              <div 
+                key={product.id} 
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group"
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={product.image} 
                     alt={product.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
@@ -224,7 +276,7 @@ const Home: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
                   <p className="text-gray-600 mb-4">{product.description}</p>
                   <button 
-                    onClick={() => addToCart(product)}
+                    onClick={() => handleAddToCart(product)}
                     className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white py-3 rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-semibold"
                   >
                     Add to Cart
@@ -237,6 +289,7 @@ const Home: React.FC = () => {
           <div className="text-center mt-12">
             <Link 
               to="/products"
+              onClick={scrollToTop}
               className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-8 py-4 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300 font-semibold text-lg inline-flex items-center space-x-2"
             >
               <span>View All Products</span>

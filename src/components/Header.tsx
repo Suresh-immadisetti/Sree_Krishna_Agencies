@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Menu, 
   X, 
   Search,
   ChevronDown,
-  ShoppingCart,
-  Store
+  ShoppingCart
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import logo from '../assets/logo.png'; // Import logo from assets
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +32,21 @@ const Header: React.FC = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/products?search=${encodeURIComponent(searchQuery)}`);
+      scrollToTop();
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleNavigation = (closeMenu = false) => {
+    scrollToTop();
+    if (closeMenu) {
+      setIsMenuOpen(false);
     }
   };
 
@@ -39,15 +54,21 @@ const Header: React.FC = () => {
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-lg z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
-              <Store className="w-7 h-7 text-white" />
-            </div>
+          <Link 
+            to="/" 
+            className="flex items-center space-x-3"
+            onClick={() => handleNavigation()}
+          >
+            <img 
+              src={logo} 
+              alt="Sree Krishna Agencies Logo"
+              className="h-16" 
+            />
             <div>
               <span className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                Ramesh Trading Company
+                Sree Krishna Agencies
               </span>
-              <p className="text-xs text-gray-500">Since 1998</p>
+              <p className="text-xs text-gray-500">Since 2025</p>
             </div>
           </Link>
           
@@ -66,8 +87,20 @@ const Header: React.FC = () => {
           
           <div className="hidden md:block">
             <div className="flex items-center space-x-6">
-              <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">Home</Link>
-              <Link to="/about" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">About</Link>
+              <Link 
+                to="/" 
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium"
+                onClick={() => handleNavigation()}
+              >
+                Home
+              </Link>
+              <Link 
+                to="/about" 
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium"
+                onClick={() => handleNavigation()}
+              >
+                About
+              </Link>
               
               <div className="relative">
                 <button
@@ -86,7 +119,10 @@ const Header: React.FC = () => {
                           key={index}
                           to="/products"
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
-                          onClick={() => setIsProductsDropdownOpen(false)}
+                          onClick={() => {
+                            setIsProductsDropdownOpen(false);
+                            handleNavigation();
+                          }}
                         >
                           {item}
                         </Link>
@@ -96,11 +132,18 @@ const Header: React.FC = () => {
                 )}
               </div>
               
-              <Link to="/contact" className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium">Contact</Link>
+              <Link 
+                to="/contact" 
+                className="text-gray-700 hover:text-orange-600 transition-colors duration-200 font-medium"
+                onClick={() => handleNavigation()}
+              >
+                Contact
+              </Link>
               
               <Link 
                 to="/cart" 
                 className="relative text-gray-700 hover:text-orange-600 transition-colors duration-200"
+                onClick={() => handleNavigation()}
               >
                 <ShoppingCart className="w-6 h-6" />
                 {state.items.length > 0 && (
@@ -110,7 +153,13 @@ const Header: React.FC = () => {
                 )}
               </Link>
               
-              <button className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-medium">
+              <button 
+                className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-200 font-medium"
+                onClick={() => {
+                  navigate('/contact');
+                  handleNavigation();
+                }}
+              >
                 Get Quote
               </button>
             </div>
@@ -120,6 +169,7 @@ const Header: React.FC = () => {
             <Link 
               to="/cart" 
               className="relative text-gray-700 hover:text-orange-600 transition-colors duration-200"
+              onClick={() => handleNavigation(true)}
             >
               <ShoppingCart className="w-6 h-6" />
               {state.items.length > 0 && (
@@ -154,12 +204,42 @@ const Header: React.FC = () => {
                 />
               </form>
             </div>
-            <Link to="/" className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <Link to="/about" className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" onClick={() => setIsMenuOpen(false)}>About</Link>
-            <Link to="/products" className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Products</Link>
-            <Link to="/contact" className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+            <Link 
+              to="/" 
+              className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" 
+              onClick={() => handleNavigation(true)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" 
+              onClick={() => handleNavigation(true)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/products" 
+              className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" 
+              onClick={() => handleNavigation(true)}
+            >
+              Products
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block px-3 py-2 text-gray-700 hover:text-orange-600 transition-colors" 
+              onClick={() => handleNavigation(true)}
+            >
+              Contact
+            </Link>
             <div className="px-3 py-2">
-              <button className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full font-medium">
+              <button 
+                className="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white px-6 py-2 rounded-full font-medium"
+                onClick={() => {
+                  navigate('/contact');
+                  handleNavigation(true);
+                }}
+              >
                 Get Quote
               </button>
             </div>

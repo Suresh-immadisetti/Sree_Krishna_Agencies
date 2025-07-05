@@ -1,31 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Store,
   Facebook,
   Twitter,
   Instagram,
   Linkedin
 } from 'lucide-react';
+import logo from '../assets/logo.png'; // Import white logo from assets
 
 const Footer: React.FC = () => {
+  const handleNavigation = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
-                <Store className="w-7 h-7 text-white" />
-              </div>
+              <img 
+                src={logo} 
+                alt="Sree Krishna Agencies Logo"
+                className="h-16" 
+              />
               <div>
-                <span className="text-xl font-bold">Ramesh Trading Company</span>
-                <p className="text-sm text-gray-400">Since 1998</p>
+                <span className="text-xl font-bold">Sree Krishna Agencies</span>
+                <p className="text-sm text-gray-400">Since 2025</p>
               </div>
             </div>
             <p className="text-gray-400 mb-6">
-              Your trusted wholesale partner for premium quality groceries, food products, spices, grains, and commodities since 1998. 
-              We provide the finest products with guaranteed freshness and competitive wholesale pricing across Mumbai and Maharashtra.
+              Your trusted wholesale partner for premium quality groceries, food products, spices, grains, and commodities since 2025. 
+              We provide the finest products with guaranteed freshness and competitive wholesale pricing across Hyderabad and Telangana.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
@@ -46,32 +55,57 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/products" className="text-gray-400 hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Wholesale Prices</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Bulk Orders</a></li>
+              <li>
+                <Link 
+                  to="/" 
+                  onClick={handleNavigation}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/about" 
+                  onClick={handleNavigation}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/products" 
+                  onClick={handleNavigation}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Products
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/contact" 
+                  onClick={handleNavigation}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Store Locations</h4>
+            <h4 className="text-lg font-semibold mb-4">Our Location</h4>
             <div className="space-y-4">
               <div>
-                <h5 className="font-semibold text-orange-400 mb-1">Main Store</h5>
+                <h5 className="font-semibold text-orange-400 mb-1">Hyderabad Store</h5>
                 <p className="text-gray-400 text-sm">
-                  Shop No. 15-16, Crawford Market,<br />
-                  Dr. D.N. Road, Fort,<br />
-                  Mumbai - 400001, Maharashtra
+                  3-5-135, Hyderguda Cross Rd,<br />
+                  Attapur, Gumma Konda Colony,<br />
+                  Hyderabad, Telangana 500048
                 </p>
-              </div>
-              <div>
-                <h5 className="font-semibold text-orange-400 mb-1">Godown Location</h5>
-                <p className="text-gray-400 text-sm">
-                  Warehouse No. 8, APMC Market,<br />
-                  Sector 19, Vashi,<br />
-                  Navi Mumbai - 400703, Maharashtra
+                <p className="text-gray-400 text-sm mt-2">
+                  Phone: +91 6301949370
                 </p>
               </div>
             </div>
@@ -81,12 +115,30 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="grid md:grid-cols-2 gap-4 items-center">
             <p className="text-gray-400 text-center md:text-left">
-              &copy; 2024 Ramesh Trading Company. All rights reserved.
+              &copy; 2024 Sree Krishna Agencies. All rights reserved.
             </p>
             <div className="flex justify-center md:justify-end space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Wholesale Terms</a>
+              <Link 
+                to="/privacy-policy" 
+                onClick={handleNavigation}
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Privacy Policy
+              </Link>
+              <Link 
+                to="/terms-of-service" 
+                onClick={handleNavigation}
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Terms of Service
+              </Link>
+              <Link 
+                to="/wholesale-terms" 
+                onClick={handleNavigation}
+                className="text-gray-400 hover:text-white transition-colors text-sm"
+              >
+                Wholesale Terms
+              </Link>
             </div>
           </div>
         </div>
