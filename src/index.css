@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these base styles below Tailwind imports */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  @apply bg-white text-gray-800;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Debug styles (remove after fixing) */
+.debug * {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Sree Krishna Agencies",
+  "short_name": "SKA",
+  "start_url": "/Sree_Krishna_Agencies/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/Sree_Krishna_Agencies/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Sree_Krishna_Agencies/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
