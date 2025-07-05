@@ -1,3 +1,4 @@
+import React from 'react'; // ✅ Add this
 import { useState, useEffect } from 'react';
 import { CartProvider } from './context/CartContext';
 import Header from './components/Header';
@@ -15,7 +16,7 @@ function App() {
       console.log('Initial loading complete');
       setIsInitialLoading(false);
     }, 2000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
